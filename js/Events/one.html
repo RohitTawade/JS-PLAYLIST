@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141;">
+    <div>
+        <ul id="images">
+            <li><img id="royal" width="150" height="150" src="https://images.pexels.com/photos/17645795/pexels-photo-17645795/free-photo-of-little-bird-among-apple-flowers.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="photoshop"></li>
+            <li><img id="pray" width="150" height="150" src="https://images.pexels.com/photos/17573843/pexels-photo-17573843/free-photo-of-wood-light-garden-pot.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="photoshop"></li>
+            <li><img id="owl" width="150" height="150" src="https://images.pexels.com/photos/17977592/pexels-photo-17977592.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="photoshop"></li>
+            <li><img id="images" width="150" height="150" src="https://images.pexels.com/photos/15056061/pexels-photo-15056061/free-photo-of-reflection-of-mosque.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="photoshop"></li>
+            <li><img id="prayer" width="150" height="150" src="https://images.pexels.com/photos/17987073/pexels-photo-17987073/free-photo-of-dondurma.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="photoshop"></li>
+            <li><a style="color: aliceblue;" id="google" href="https://google.com">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    //  document.getElementById('owl').onclick = function() {
+    //     alert("owl clicked")
+    //  } // old approch
+
+
+    // document.getElementById('owl').addEventListener('click', function() {
+    //     alert("Owl cliked again")
+    // },false) // default paramter is false 
+
+
+    // document.getElementById('owl').addEventListener('click', function(e) {
+    // //    console.log(e); // explore on website
+    // },false) // default paramter is false 
+
+
+    // // Study topic -> 
+    // // type, timestamp, defaultPrevented, 
+    // // target , toElement , srcElement, currentTarget
+    // // clientX, clientY, screenX, scrreenY
+    // // altKey, ctrlKey, shiftKey, keyCode 
+
+    // document.getElementById('images').addEventListener('click', function(e) {
+    //     console.log("clicked inside the ul");
+    // },false)
+    // document.getElementById('owl').addEventListener('click',function(e) {
+    //     console.log("owl clicked");
+    //     e.stopPropagation() // stop Propagation
+    // },false)
+
+
+    // document.getElementById('google').addEventListener('click', function(e) {
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log("Google Clicked");    
+
+    // },false)
+
+
+    // when we click the image then image will be hide
+
+    document.querySelector('#images').addEventListener('click', function(e){
+
+        // console.log(e.target);  // check who is targeted when we clicked any image
+        console.log(e.target.parentNode); // parentNode targeted because we not only remove image we remove list also that's why we get parentNode.
+        // console.log(e.target.tagName); // to fetch the tag name and using tag name we can apply if conditions
+
+        if(e.target.tagName === 'IMG') { // check IMG tag user click or not
+            console.log(e.target.id);
+        let removeIt = e.target.parentNode;
+        removeIt.remove()  // firstWay
+        }
+        // removeIt.parentNode.removeChild(removeIt) // second way
+
+
+        // here one problem when we click list item on the page then it remove all images (We can check by clicking list symbol).
+
+        // solve above problemn using if 
+
+
+    },false) // default is false we dont need to add
+
+
+
+</script>
+</html>

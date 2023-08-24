@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Rohit Santram Tawade</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+
+  <script>
+    const sayDate = function (str) {
+      console.log(str, "Rohit", Date.now());
+    };
+    // Every one second after this function execute automatically until we not stop
+    // const intervalID=setInterval(sayDate,1000, "Hi")
+
+    let intervalID;
+    document.querySelector("#start").addEventListener("click", function (e) {
+      intervalID = setInterval(sayDate, 1000, "Hi");
+    });
+
+    document.querySelector("#stop").addEventListener("click", function (e) {
+      clearInterval(intervalID);
+    });
+  </script>
+</html>

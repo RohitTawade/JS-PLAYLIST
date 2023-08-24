@@ -1,0 +1,38 @@
+<!-- json formater search on gooogle an format the API you can check tree , text etc option to check format -->
+
+<!-- before fetch how to request send API -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem maxime animi alias obcaecati, ipsa porro accusantium quo, cupiditate excepturi odio, sed a! Enim, repellat dolorum temporibus provident ipsa doloremque quam.
+    Eveniet laudantium iste, adipisci ipsa hic deleniti beatae. Qui est perferendis, nihil ullam animi commodi asperiores eum fugit cupiditate minima dignissimos, repellat eligendi illum? Ea, eos. Tempora deserunt ut nemo.
+    Repellat possimus sunt culpa expedita quas libero, voluptatem molestias. Laudantium inventore accusantium ex quod architecto iure dicta necessitatibus blanditiis, fuga hic quisquam ad nihil. Iusto dicta inventore fuga voluptas maxime?
+    Quis officiis cum eligendi, eum voluptatum sunt officia pariatur ipsam quasi corporis nobis iure! Facere, molestias in odit temporibus commodi at ratione quaerat ab quam cum nemo, nesciunt velit dolore.
+    Consequatur, quidem. Quasi dolor autem iure accusamus maiores vitae sed. Vero hic sunt optio, ipsa a consectetur praesentium architecto eum officiis repudiandae aliquid voluptatem doloremque incidunt rem rerum ad quos?
+
+
+    <script>
+        const xhr = new XMLHttpRequest()
+        const requestURL= 'https://randomuser.me/api/'
+        // console.log(xhr.readyState);
+        xhr.open('GET', requestURL)
+        xhr.onreadystatechange = function() {
+            console.log(xhr.readyState);
+            if(xhr.readyState===4) {
+                const data=JSON.parse(this.responseText); // type of string every time so we here convert JSON
+                console.log(data.info);
+            }
+        }
+        
+        xhr.send()
+    </script>
+</body>
+</html>
+
+
